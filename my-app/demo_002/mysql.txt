@@ -1,0 +1,5 @@
+数据库名称	test_mysql_express
+数据库用户	dongchao
+数据库密码	p4rBB8jiWhWsZo9p
+数据库地址	mysql.sqlpub.com:3306
+注册邮箱	dongchao980612@163.com
