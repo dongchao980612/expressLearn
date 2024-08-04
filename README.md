@@ -5,7 +5,9 @@
 ## Express概述
 
 ## 初识Expreess
+
 什么是[Express](https://express.nodejs.cn/)?
+
 - 官方给出的概念:Express是基于Node.js平台，快速，开放，极简的Web开发框架
 - 通俗的理解:Express的作用和Node.js内置的http模块类似，是专门用来创建Web服务器的
 
@@ -18,6 +20,7 @@ npm init -y
 ```
 
 http框架代码：
+
 ```js
 // http_demo.js
 var http = require('http');
@@ -33,7 +36,9 @@ http.createServer(function (req, res){
 console.log('Server running at http://127.0.0.1:3000/');
 
 ```
+
 Express框架：
+
 ```js
 const express = require('express');
 
@@ -47,6 +52,7 @@ app.listen(3000, () => {
     console.log('Server running at http://127.0.0.1:3000/');
 });
 ```
+
 ## Express路由
 
 ```js
@@ -74,12 +80,15 @@ app.put('/', (req, res) => {
 app.listen(3000, () => {
     console.log('Server running at http://127.0.0.1:3000/');
 });
+
 ```
+
 > 热部署 nodemon app.js
 
 ## 路由模块化
 
 路由文件：
+
 ```js
 // router_demo.js
 const express = require('express');
@@ -106,6 +115,7 @@ module.exports = router;
 ```
 
 使用路由：
+
 ```js
 // demo_001/app.js
 const express = require('express');
@@ -120,6 +130,7 @@ app.listen(3000, () => {
 });
 
 ```
+
 ## 路由参数
 
 ```js
@@ -140,9 +151,11 @@ router.get('/', (req, res) => {
     res.end();
   });
 ```
+
 ## 中间件
 
 定义:
+
 ```js
 // 定义方式1:
 const middleware = (req, res, next) => {
@@ -167,6 +180,7 @@ router.get('/', middleware_router1,middleware_router2,(req, res) => {
 
 });
 ```
+
 ## 内置中间件
 
 ```js
@@ -183,7 +197,8 @@ router.post('/', (req, res) => {
 ```
 
 ## 数据库
-> https://www.sqlpub.com/#/
+
+> <https://www.sqlpub.com/#/>
 
 ```js
 // demo_002/db.js
@@ -239,8 +254,8 @@ connnection.query('SELECT * FROM TABLES', (err, results, fields) => {
 
 ## 接口api
 
-
 ## validator
+
 ```js
 // demo_003/router/student.js
 
@@ -319,8 +334,11 @@ const homeList = [
 app.get('/home', (req, res) => {
     res.render("home", { homeList: homeList });
 });
+
 ```
+
 模板文件：
+
 ```html
 <!-- /views/api.ejs -->
 <body>
@@ -335,8 +353,8 @@ app.get('/home', (req, res) => {
 </body>
 ```
 
-
 模板文件：
+
 ```html
 <!-- /views/home.ejs -->
 <body>
