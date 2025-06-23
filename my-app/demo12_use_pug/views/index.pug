@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    title= 'Mock Data'
+  body
+    h1= 'Mock Data'
+    form(method='/add', action='POST')
+      input(type='text', name='id', placeholder='ID')
+      input(type='text', name='name', placeholder='Name')
+      button(type='submit') Add
+    table
+      thead
+        tr
+          th Id
+          th Name
+          th Action
+      tbody
+        each person in people
+          tr
+            td= person.id
+            td= person.name
+            td
+              a(href='/edit/' + person.id) Edit
+              a(href='/delete/' + person.id) Delete

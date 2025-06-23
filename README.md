@@ -184,8 +184,9 @@ router.get('/', middleware_router1,middleware_router2,(req, res) => {
 ## 内置中间件
 
 ```js
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.static('resource'))
+app.use(express.json()); // 使能 req.body
+app.use(express.urlencoded({ extended: true }));// 使能 req.query
 
 router.post('/', (req, res) => {
     console.log('req.body', req.body);
